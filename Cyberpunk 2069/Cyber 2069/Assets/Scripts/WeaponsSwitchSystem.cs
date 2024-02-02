@@ -1,0 +1,74 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WeaponsSwitchSystem : MonoBehaviour
+{
+    private GunSystem activeGun;
+    public List<GunSystem> allguns = new List<GunSystem>();
+    public int currentGunNumber;
+
+    public List<GunSystem> unlockableGuns = new List<GunSystem>();
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        foreach (GunSystem gun in allguns)
+        {
+            gun.gameObject.SetActive(false);
+        }
+        activeGun = allguns[currentGunNumber];
+        activeGun.gameObject.SetActive(true);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            SwitchGun();
+        }
+    }
+
+    private void SwitchGun()
+    {
+        activeGun.gameObject.SetActive(false);
+        currentGunNumber++;
+        AudioManager.instance.PlayerSFX(6);
+
+        if (currentGunNumber >= allguns.Count)
+        {
+            currentGunNumber = 0;
+        }
+
+        activeGun = allguns[currentGunNumber];
+        activeGun.gameObject.SetActive(true);
+
+    }
+
+    public void AddGun(string gunName)
+    {
+        bool unlocked = false;
+
+        if (unlockableGuns.Count > 0)
+        {
+            for (int i = 0; i < unlockableGuns.Count; i++)
+            {
+                if (unlockableGuns[i].name == gunName)
+                {
+                    allguns.Add(unlockableGuns[i]);
+                    unlockableGuns.RemoveAt(i);
+                    unlocked = true;
+                }
+            }
+        }
+
+        if (unlocked)
+        {
+            currentGunNumber = allguns.Count - 2;
+            SwitchGun();
+        }
+    }
+}
