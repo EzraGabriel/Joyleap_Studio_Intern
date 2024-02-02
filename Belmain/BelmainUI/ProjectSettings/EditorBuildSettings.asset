@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SplashScreen.unity
+    guid: 53fc7e6cc5351254c9273638ea563b97
+  - enabled: 1
+    path: Assets/Scenes/SelamatDatang.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: ca50a29684b0ceb4f9865b388de57b4f
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4bc59269eb368f8438dbbd50977cc8d2
+  - enabled: 1
+    path: Assets/Scenes/Belajar Hewan.unity
+    guid: 54b7862da0234514ebabe1553d5c88bf
+  - enabled: 1
+    path: Assets/Scenes/Bermain Game.unity
+    guid: d6441cecbf4ac4a4fa8c81129840cfc2
+  - enabled: 1
+    path: Assets/Scenes/Bermain Makanan.unity
+    guid: df6d221a3a47c444eab9874649178066
+  - enabled: 1
+    path: Assets/Scenes/InfoPengembang.unity
+    guid: e68612a5b6663df49bd0eb73241e409c
+  - enabled: 1
+    path: Assets/Scenes/Jeda.unity
+    guid: c193663552c993940aaf05a74fc94ff0
+  m_configObjects: {}
